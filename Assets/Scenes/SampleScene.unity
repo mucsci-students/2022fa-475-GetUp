@@ -442,7 +442,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71a207d3d3fb084aad04467a00c7f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomb: {fileID: 5692104917978622406, guid: 957627cec371fcf44b60b6209b077eed, type: 3}
+  powerups:
+  - {fileID: 5692104917978622406, guid: 957627cec371fcf44b60b6209b077eed, type: 3}
+  - {fileID: 9124557523800611534, guid: 03caad3233c059c4386a57fc05a6a567, type: 3}
   moveSpeed: 5
 --- !u!1 &1970402623
 GameObject:
