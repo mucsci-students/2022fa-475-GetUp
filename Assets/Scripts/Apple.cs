@@ -11,7 +11,10 @@ public class Apple : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody2D>().AddForce(transform.right * force);
+        float playerDirection = GameObject.FindGameObjectWithTag("Player").transform.localScale.x * -2;
+        print(playerDirection);
+
+        GetComponent<Rigidbody2D>().AddForce(playerDirection * transform.right * force);
         StartCoroutine(ApplyGravity());
         StartCoroutine(WitherCountdown());
     }

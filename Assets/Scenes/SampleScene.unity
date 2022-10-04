@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4973302571607540862, guid: b076c268235cb7348a5d9a036ec254c4, type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4973302571607540863, guid: b076c268235cb7348a5d9a036ec254c4, type: 3}
       propertyPath: m_Name
@@ -191,6 +191,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7529635343020985360, guid: 8dab7379f6c67d9448d4c24d1eace61b, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7529635343020985361, guid: 8dab7379f6c67d9448d4c24d1eace61b, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Rock A
@@ -379,6 +383,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4653831799294361327, guid: 7903d081236f2304396572efb80b5f8f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7903d081236f2304396572efb80b5f8f, type: 3}
 --- !u!1 &1594697890
@@ -445,6 +453,7 @@ MonoBehaviour:
   powerups:
   - {fileID: 5692104917978622406, guid: 957627cec371fcf44b60b6209b077eed, type: 3}
   - {fileID: 9124557523800611534, guid: 03caad3233c059c4386a57fc05a6a567, type: 3}
+  - {fileID: 1371486375850154260, guid: cfcd65c2b7a26d34bb268d0b4bbe9671, type: 3}
   moveSpeed: 5
 --- !u!1 &1970402623
 GameObject:
@@ -1455,6 +1464,10 @@ PrefabInstance:
     - target: {fileID: 8449954542512847798, guid: b7cd6a625c0006045b22d2ccd730eb70, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449954542516237906, guid: b7cd6a625c0006045b22d2ccd730eb70, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8449954542517501266, guid: b7cd6a625c0006045b22d2ccd730eb70, type: 3}
       propertyPath: m_Radius
