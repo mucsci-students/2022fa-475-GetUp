@@ -1,0 +1,62 @@
+[33mcommit 0f51ab2e0b899f2b2960e929ca6b85b5081171d0[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m)[m
+Merge: f730046 90487c4
+Author: CodeDog3 <96511553+CodeDog3@users.noreply.github.com>
+Date:   Tue Oct 4 08:13:56 2022 -0400
+
+    Merge pull request #8 from mucsci-students/icePotionControl
+    
+    able to spawn ice potion + additional player changes
+
+[33mcommit f7300461c60b3baa02cfe0a5e643976df7087522[m
+Author: CodeDog3 <96511553+CodeDog3@users.noreply.github.com>
+Date:   Tue Oct 4 01:32:39 2022 -0400
+
+    UI quick fix
+
+[33mcommit ac9e09a6471a709957ed2cc0ee3cddec9d6a8c7e[m
+Author: CodeDog3 <96511553+CodeDog3@users.noreply.github.com>
+Date:   Tue Oct 4 01:29:58 2022 -0400
+
+    UI
+
+[33mcommit 90487c4d8a3fa43d0a4c444146b7d659aefac531[m[33m ([m[1;31morigin/icePotionControl[m[33m)[m
+Author: anOrgandroiD <anorgandroid@outlook.com>
+Date:   Mon Oct 3 14:35:42 2022 -0400
+
+    able to spawn ice potion + additional player changes
+
+[33mcommit 770bb5fceb9f4bacf0a451e3b9e15aee5f353c6b[m
+Merge: baf6804 4747df5
+Author: CodeDog3 <96511553+CodeDog3@users.noreply.github.com>
+Date:   Fri Sep 30 12:38:46 2022 -0400
+
+    Merge pull request #5 from mucsci-students/appleControl
+    
+    created throwable apple + powerup switch
+
+[33mcommit 4747df5acf1235b0b79d62312d4cf8f6562dfda2[m[33m ([m[1;31morigin/appleControl[m[33m)[m
+Author: anOrgandroiD <anorgandroid@outlook.com>
+Date:   Fri Sep 30 11:52:16 2022 -0400
+
+    created throwable apple + powerup switch
+
+[33mcommit baf6804b60280d33e11aebc59c8690406f50acb5[m[33m ([m[1;31morigin/mine[m[33m, [m[1;31morigin/Test-2[m[33m)[m
+Merge: 0ac18ae 6a5bfcc
+Author: KBucher21 <70379821+WhitePolaris@users.noreply.github.com>
+Date:   Mon Sep 26 16:28:01 2022 -0400
+
+    Merge pull request #1 from mucsci-students/bombControl
+    
+    created ability to spawn explosive bomb when space is pressed
+
+[33mcommit 6a5bfcc6a4af0b85a7413c2da1faa094634b651c[m[33m ([m[1;31morigin/bombControl[m[33m)[m
+Author: anOrgandroiD <anorgandroid@outlook.com>
+Date:   Mon Sep 26 14:29:32 2022 -0400
+
+    created ability to spawn explosive bomb when space is pressed
+
+[33mcommit 0ac18ae325b2dda0d96bfd7cc3767cae8a911d79[m
+Author: ccain-millersville <65725947+ccain-millersville@users.noreply.github.com>
+Date:   Tue Sep 20 08:36:13 2022 -0400
+
+    Initial commit
