@@ -10,9 +10,10 @@ public class PlayerController : MonoBehaviour
     private float direction = -1;
 
     public GameObject[] powerups;
-    public float moveSpeed;
-    public float JumpSpeed = 10f;
+    public float moveSpeed = 5;
+    public float JumpSpeed = 500f;
     Rigidbody2D rigidB;
+    
 
     public float JumpCoolDown = .65f;
     bool InAir = false;
@@ -79,7 +80,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (moveSpeed > moveSpeedDefault)
-            moveSpeed *= 0.97f;
+            moveSpeed *= .97f;
         else
             moveSpeed = moveSpeedDefault;
         }

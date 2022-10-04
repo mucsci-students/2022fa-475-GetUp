@@ -455,6 +455,8 @@ MonoBehaviour:
   - {fileID: 9124557523800611534, guid: 03caad3233c059c4386a57fc05a6a567, type: 3}
   - {fileID: 1371486375850154260, guid: cfcd65c2b7a26d34bb268d0b4bbe9671, type: 3}
   moveSpeed: 5
+  JumpSpeed: 500
+  JumpCoolDown: 0.65
 --- !u!1 &1970402623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,6 +1466,14 @@ PrefabInstance:
     - target: {fileID: 8449954542512847798, guid: b7cd6a625c0006045b22d2ccd730eb70, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449954542516237906, guid: b7cd6a625c0006045b22d2ccd730eb70, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449954542516237906, guid: b7cd6a625c0006045b22d2ccd730eb70, type: 3}
+      propertyPath: m_GravityScale
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8449954542516237906, guid: b7cd6a625c0006045b22d2ccd730eb70, type: 3}
       propertyPath: m_CollisionDetection
