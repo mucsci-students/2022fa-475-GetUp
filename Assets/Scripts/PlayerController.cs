@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{
+{ 
+
     private int currentPower = 0;
     private float moveSpeedDefault;
     private float direction = -1;
 
     public GameObject[] powerups;
     public float moveSpeed;
+    public float JumpSpeed = 10f;
+    Rigidbody2D rigidB;
+
+    public float JumpCoolDown = .65f;
+    bool InAir = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        rigidB = GetComponent<Rigidbody2D>();
         moveSpeedDefault = moveSpeed;
     }
 
@@ -40,6 +48,18 @@ public class PlayerController : MonoBehaviour
         {
             CreatePowerup();
         }
+        if (Input.GetKeyDown(KeyCode.UpArrow) && InAir == false)
+        {
+            StartCoroutine(Jumper());
+        }
+
+    IEnumerator Jumper(){
+            rigidB.AddForce(new Vector2(0,JumpSpeed));
+            InAir = true;
+            yield return new WaitForSeconds(JumpCoolDown);
+            InAir = false;
+    }
+
     }
 
     void FixedUpdate()
@@ -62,7 +82,7 @@ public class PlayerController : MonoBehaviour
             moveSpeed *= 0.97f;
         else
             moveSpeed = moveSpeedDefault;
-    }
+        }
 
     void CreatePowerup()
     {
@@ -82,7 +102,7 @@ public class PlayerController : MonoBehaviour
         {
             float h = Input.GetAxis("Horizontal");
 
-            if (h != 0)
+            if (h != 0 && moveSpeed < 10f)
                 moveSpeed *= 1.05f;
         }
     }
