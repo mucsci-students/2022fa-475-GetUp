@@ -47,7 +47,10 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            CreatePowerup();
+            if (PauseControl.paused == false){
+                CreatePowerup();
+            }
+
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) && InAir == false)
         {
