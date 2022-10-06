@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && InAir == false)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && InAir == false)
         {
             StartCoroutine(Jumper());
         }
