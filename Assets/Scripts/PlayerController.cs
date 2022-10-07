@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5;
     public float JumpSpeed = 500f;
     Rigidbody2D rigidB;
+    Animator anim;
     
 
     public float JumpCoolDown = .65f;
@@ -20,8 +21,8 @@ public class PlayerController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+        anim = transform.Find("PlayerMonster").GetComponent<Animator>();
         rigidB = GetComponent<Rigidbody2D>();
         moveSpeedDefault = moveSpeed;
     }
@@ -56,14 +57,14 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Jumper());
         }
-
-    IEnumerator Jumper(){
-            rigidB.AddForce(new Vector2(0,JumpSpeed));
-            InAir = true;
-            yield return new WaitForSeconds(JumpCoolDown);
-            InAir = false;
     }
 
+    IEnumerator Jumper()
+    {
+        rigidB.AddForce(new Vector2(0, JumpSpeed));
+        InAir = true;
+        yield return new WaitForSeconds(JumpCoolDown);
+        InAir = false;
     }
 
     void FixedUpdate()
@@ -71,16 +72,23 @@ public class PlayerController : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         transform.position = new Vector2(transform.position.x + (h * Time.deltaTime * moveSpeed), transform.position.y);
 
-        if (h > 0)
+        if (h != 0)
         {
-            transform.localScale = new Vector3(-0.5f, 0.5f, 1);
-            direction = -1;
+            anim.SetBool("isMoving", true);
+
+            if (h > 0)
+            {
+                transform.localScale = new Vector3(-0.5f, 0.5f, 1);
+                direction = -1;
+            }
+            else if (h < 0)
+            {
+                transform.localScale = new Vector3(0.5f, 0.5f, 1);
+                direction = 1;
+            }
         }
-        else if (h < 0)
-        {
-            transform.localScale = new Vector3(0.5f, 0.5f, 1);
-            direction = 1;
-        }
+        else
+            anim.SetBool("isMoving", false);
 
         if (moveSpeed > moveSpeedDefault)
             moveSpeed *= .97f;
@@ -92,12 +100,16 @@ public class PlayerController : MonoBehaviour
     {
         if (powerups[currentPower].CompareTag("Bomb") || powerups[currentPower].CompareTag("Ice Potion"))
         {
+            anim.SetTrigger("drop");
             transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
             Instantiate(powerups[currentPower], new Vector2(transform.position.x, transform.position.y - 0.5f), Quaternion.identity);
         }
 
         else
+        {
+            anim.SetTrigger("attack");
             Instantiate(powerups[currentPower], new Vector2(transform.position.x + (-0.1f * direction), transform.position.y), Quaternion.identity);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
