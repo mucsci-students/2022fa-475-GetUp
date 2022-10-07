@@ -11,5 +11,8 @@ public class LevelSelector : MonoBehaviour
 
     public void loadLevelSelector(){
         SceneManager.LoadScene(LevelSelectors);
+        PauseControl.paused = false;
+        PauseControl.PauseUnpause();
+
     }
 }

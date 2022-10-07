@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Level1 : MonoBehaviour
+public class Level8 : MonoBehaviour
 {
- public string first = "Level 1";
+ public string eigth = "Level 8";
 
     // Update is called once per frame
     public void OnMouseDown ()
     {
-        SceneManager.LoadScene(first);
-        Debug.Log("work pls");
+        SceneManager.LoadScene(eigth);
     }
 }
