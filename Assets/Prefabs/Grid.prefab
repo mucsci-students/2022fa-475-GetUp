@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5078611616788702382}
   - component: {fileID: 5078611616788702377}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 5078611617153825097}
   - component: {fileID: 5078611617153825103}
   - component: {fileID: 5078611617153825102}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Platforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}

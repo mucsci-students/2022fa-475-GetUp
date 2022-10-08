@@ -144,12 +144,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71a207d3d3fb084aad04467a00c7f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundLayerMasks:
+    serializedVersion: 2
+    m_Bits: 384
   powerups:
   - {fileID: 5692104917978622406, guid: 957627cec371fcf44b60b6209b077eed, type: 3}
   - {fileID: 9124557523800611534, guid: 03caad3233c059c4386a57fc05a6a567, type: 3}
   - {fileID: 1371486375850154260, guid: cfcd65c2b7a26d34bb268d0b4bbe9671, type: 3}
   moveSpeed: 5
-  JumpSpeed: 500
+  jumpSpeed: 200
   JumpCoolDown: 0.65
 --- !u!114 &7174411304049407355
 MonoBehaviour:

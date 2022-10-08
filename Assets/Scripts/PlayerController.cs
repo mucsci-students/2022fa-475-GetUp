@@ -3,41 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
+
 { 
     public static int bombQuantity = 0;
     public static int appleQuantity = 0;
     public static int freezeQuantity = 0;  
 
+    private bool control = true;
+
     private int currentPower = 0;
     private float moveSpeedDefault;
     private float direction = -1;
+    private Rigidbody2D rb;
+    private CircleCollider2D circCol;
+    private Animator anim;
+    [SerializeField]
+    private LayerMask groundLayerMasks;
 
     public GameObject[] powerups;
     public float moveSpeed = 5;
-    public float JumpSpeed = 500f;
-    Rigidbody2D rigidB;
-    Animator anim;
-    
-
-    public float JumpCoolDown = .65f;
-    bool InAir = false;
-
+    public float jumpSpeed = 200f;
 
     // Start is called before the first frame update
     void Start() {
         anim = transform.Find("PlayerMonster").GetComponent<Animator>();
-        rigidB = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        circCol = GetComponent<CircleCollider2D>();
         moveSpeedDefault = moveSpeed;
 
         bombQuantity = 0;
         appleQuantity = 0;
         freezeQuantity = 0;  
 
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!control)
+            return;
+
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             if (currentPower >= powerups.Length - 1)
@@ -61,22 +67,22 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && InAir == false)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && IsGrounded())
         {
-            StartCoroutine(Jumper());
+            rb.AddForce(new Vector2(0, jumpSpeed));
         }
     }
 
-    IEnumerator Jumper()
+    bool IsGrounded()
     {
-        rigidB.AddForce(new Vector2(0, JumpSpeed));
-        InAir = true;
-        yield return new WaitForSeconds(JumpCoolDown);
-        InAir = false;
+        return (Physics2D.Raycast(circCol.bounds.center, Vector2.down, circCol.bounds.extents.y + .01f, groundLayerMasks).collider != null);
     }
 
     void FixedUpdate()
     {
+        if (!control)
+            return;
+
         float h = Input.GetAxis("Horizontal");
         transform.position = new Vector2(transform.position.x + (h * Time.deltaTime * moveSpeed), transform.position.y);
 
@@ -123,8 +129,20 @@ public class PlayerController : MonoBehaviour
         else if((powerups[currentPower].CompareTag("Apple") && appleQuantity != 0))
         {
             anim.SetTrigger("attack");
-            Instantiate(powerups[currentPower], new Vector2(transform.position.x + (-0.1f * direction), transform.position.y), Quaternion.identity);
+
+            Instantiate(powerups[currentPower], new Vector2(transform.position.x + (-0.1f * direction) + (Input.GetAxis("Horizontal") / 2), transform.position.y), Quaternion.identity);
             --appleQuantity;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            control = false;
+            rb.AddForce(transform.up * Random.Range(300f, 600f));
+            rb.AddForce(-transform.right * Random.Range(30f, 60f));
+            circCol.enabled = false;
         }
     }
 
