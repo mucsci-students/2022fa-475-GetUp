@@ -3,32 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{ 
-
+{
+    private bool control = true;
     private int currentPower = 0;
     private float moveSpeedDefault;
     private float direction = -1;
+    private Rigidbody2D rb;
+    private CircleCollider2D circCol;
+    private Animator anim;
+    [SerializeField]
+    private LayerMask groundLayerMasks;
 
     public GameObject[] powerups;
     public float moveSpeed = 5;
-    public float JumpSpeed = 500f;
-    Rigidbody2D rigidB;
-    
-
-    public float JumpCoolDown = .65f;
-    bool InAir = false;
-
+    public float jumpSpeed = 200f;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        rigidB = GetComponent<Rigidbody2D>();
+    void Start() {
+        anim = transform.Find("PlayerMonster").GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        circCol = GetComponent<CircleCollider2D>();
         moveSpeedDefault = moveSpeed;
+        Debug.Log(completion.completionarr[0]);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!control)
+            return;
+
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             if (currentPower >= powerups.Length - 1)
@@ -52,35 +56,42 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && InAir == false)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && IsGrounded())
         {
-            StartCoroutine(Jumper());
+            rb.AddForce(new Vector2(0, jumpSpeed));
         }
-
-    IEnumerator Jumper(){
-            rigidB.AddForce(new Vector2(0,JumpSpeed));
-            InAir = true;
-            yield return new WaitForSeconds(JumpCoolDown);
-            InAir = false;
     }
 
+    bool IsGrounded()
+    {
+        return (Physics2D.Raycast(circCol.bounds.center, Vector2.down, circCol.bounds.extents.y + .01f, groundLayerMasks).collider != null);
     }
 
     void FixedUpdate()
     {
+        if (!control)
+            return;
+
         float h = Input.GetAxis("Horizontal");
         transform.position = new Vector2(transform.position.x + (h * Time.deltaTime * moveSpeed), transform.position.y);
 
-        if (h > 0)
+        if (h != 0)
         {
-            transform.localScale = new Vector3(-0.5f, 0.5f, 1);
-            direction = -1;
+            anim.SetBool("isMoving", true);
+
+            if (h > 0)
+            {
+                transform.localScale = new Vector3(-0.5f, 0.5f, 1);
+                direction = -1;
+            }
+            else if (h < 0)
+            {
+                transform.localScale = new Vector3(0.5f, 0.5f, 1);
+                direction = 1;
+            }
         }
-        else if (h < 0)
-        {
-            transform.localScale = new Vector3(0.5f, 0.5f, 1);
-            direction = 1;
-        }
+        else
+            anim.SetBool("isMoving", false);
 
         if (moveSpeed > moveSpeedDefault)
             moveSpeed *= .97f;
@@ -92,12 +103,27 @@ public class PlayerController : MonoBehaviour
     {
         if (powerups[currentPower].CompareTag("Bomb") || powerups[currentPower].CompareTag("Ice Potion"))
         {
+            anim.SetTrigger("drop");
             transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
             Instantiate(powerups[currentPower], new Vector2(transform.position.x, transform.position.y - 0.5f), Quaternion.identity);
         }
 
         else
-            Instantiate(powerups[currentPower], new Vector2(transform.position.x + (-0.1f * direction), transform.position.y), Quaternion.identity);
+        {
+            anim.SetTrigger("attack");
+            Instantiate(powerups[currentPower], new Vector2(transform.position.x + (-0.1f * direction) + (Input.GetAxis("Horizontal") / 2), transform.position.y), Quaternion.identity);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            control = false;
+            rb.AddForce(transform.up * Random.Range(300f, 600f));
+            rb.AddForce(-transform.right * Random.Range(30f, 60f));
+            circCol.enabled = false;
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)

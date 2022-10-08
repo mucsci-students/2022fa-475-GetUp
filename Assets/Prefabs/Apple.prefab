@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2730947261712781481}
   - component: {fileID: -8011616284481273855}
   - component: {fileID: -5347164322985829381}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Apple
-  m_TagString: Untagged
+  m_TagString: Apple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1533999725
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: adaac68d8e5d693499597113889d11d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 300
   resistGravityLength: 1
+  activeLength: 1
   lifeSpan: 3
 --- !u!58 &-5347164322985829381
 CircleCollider2D:

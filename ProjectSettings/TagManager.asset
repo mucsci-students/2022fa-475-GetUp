@@ -7,6 +7,10 @@ TagManager:
   - Bomb
   - Ice Potion
   - Ice Floor
+  - finish
+  - Apple
+  - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -15,8 +19,8 @@ TagManager:
   - Water
   - UI
   - Scene
-  - 
-  - 
+  - Platforms
+  - Powerups
   - 
   - 
   - 
