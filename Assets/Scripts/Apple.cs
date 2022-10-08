@@ -11,6 +11,7 @@ public class Apple : MonoBehaviour
     public float resistGravityLength;
     public float activeLength;
     public float lifeSpan;
+    public GameObject dustStorm;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class Apple : MonoBehaviour
     IEnumerator WitherCountdown()
     {
         yield return new WaitForSeconds(lifeSpan);
+        //Instantiate(dustStorm, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
@@ -50,6 +52,7 @@ public class Apple : MonoBehaviour
 
         if (!canKill && !collision.gameObject.CompareTag("Ground"))
         {
+            //Instantiate(dustStorm, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
