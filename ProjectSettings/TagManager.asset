@@ -8,6 +8,7 @@ TagManager:
   - Ice Potion
   - Ice Floor
   - finish
+  - Apple
   layers:
   - Default
   - TransparentFX
