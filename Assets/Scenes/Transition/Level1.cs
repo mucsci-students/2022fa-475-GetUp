@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Level1 : MonoBehaviour
 {
- public string first = "SampleScene";
+ public string first = "Level 1";
 
     // Update is called once per frame
     public void OnMouseDown ()
     {
-        SceneManager.LoadScene(first);
-        Debug.Log("work pls");
+        if(completion.completionarr[0])
+            SceneManager.LoadScene(first);
     }
 }
