@@ -3,14 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-
-{ 
-    public static int bombQuantity = 0;
-    public static int appleQuantity = 0;
-    public static int freezeQuantity = 0;  
-
+{
     private bool control = true;
-
     private int currentPower = 0;
     private float moveSpeedDefault;
     private float direction = -1;
@@ -30,12 +24,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         circCol = GetComponent<CircleCollider2D>();
         moveSpeedDefault = moveSpeed;
-
-        bombQuantity = 0;
-        appleQuantity = 0;
-        freezeQuantity = 0;  
-
-
+        Debug.Log(completion.completionarr[0]);
     }
 
     // Update is called once per frame
@@ -112,26 +101,17 @@ public class PlayerController : MonoBehaviour
 
     void CreatePowerup()
     {
-        if (powerups[currentPower].CompareTag("Bomb") && bombQuantity != 0)
+        if (powerups[currentPower].CompareTag("Bomb") || powerups[currentPower].CompareTag("Ice Potion"))
         {
             anim.SetTrigger("drop");
             transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
             Instantiate(powerups[currentPower], new Vector2(transform.position.x, transform.position.y - 0.5f), Quaternion.identity);
-            --bombQuantity;
         }
-        else if(powerups[currentPower].CompareTag("Ice Potion") && freezeQuantity != 0)
-        {
-            anim.SetTrigger("drop");
-            transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
-            Instantiate(powerups[currentPower], new Vector2(transform.position.x, transform.position.y - 0.5f), Quaternion.identity);
-            --freezeQuantity;
-        }
-        else if((powerups[currentPower].CompareTag("Apple") && appleQuantity != 0))
+
+        else
         {
             anim.SetTrigger("attack");
-
             Instantiate(powerups[currentPower], new Vector2(transform.position.x + (-0.1f * direction) + (Input.GetAxis("Horizontal") / 2), transform.position.y), Quaternion.identity);
-            --appleQuantity;
         }
     }
 
