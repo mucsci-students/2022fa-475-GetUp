@@ -38,6 +38,11 @@ public class EnemySlime : MonoBehaviour
             Destroy(collision.gameObject);
             TriggerDeath();
         }
+        //Spikes under Killzone tag
+        if (collision.gameObject.CompareTag("Killzone"))
+        {
+            TriggerDeath();
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
