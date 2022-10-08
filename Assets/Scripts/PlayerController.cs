@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static int bombQuantity = 0;
+    public static int appleQuantity = 0;
+    public static int freezeQuantity = 0;
+
+
     private bool control = true;
     private int currentPower = 0;
     private float moveSpeedDefault;
@@ -101,17 +106,25 @@ public class PlayerController : MonoBehaviour
 
     void CreatePowerup()
     {
-        if (powerups[currentPower].CompareTag("Bomb") || powerups[currentPower].CompareTag("Ice Potion"))
+        if (powerups[currentPower].CompareTag("Bomb") && bombQuantity != 0)
         {
             anim.SetTrigger("drop");
             transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
             Instantiate(powerups[currentPower], new Vector2(transform.position.x, transform.position.y - 0.5f), Quaternion.identity);
+            --bombQuantity;
         }
-
-        else
+        else if(powerups[currentPower].CompareTag("Ice Potion") && freezeQuantity != 0){
+            anim.SetTrigger("drop");
+            transform.position = new Vector2(transform.position.x, transform.position.y + 0.5f);
+            Instantiate(powerups[currentPower], new Vector2(transform.position.x, transform.position.y - 0.5f), Quaternion.identity);
+            --freezeQuantity;
+        }
+        else if((powerups[currentPower].CompareTag("Apple") && appleQuantity != 0))
         {
             anim.SetTrigger("attack");
+
             Instantiate(powerups[currentPower], new Vector2(transform.position.x + (-0.1f * direction) + (Input.GetAxis("Horizontal") / 2), transform.position.y), Quaternion.identity);
+            --appleQuantity;
         }
     }
 
