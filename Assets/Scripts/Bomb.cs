@@ -28,6 +28,11 @@ public class Bomb : MonoBehaviour
         {
             Vector2 dir = obj.transform.position - transform.position;
             obj.GetComponent<Rigidbody2D>().AddForce(dir * force);
+
+            if (obj.gameObject.CompareTag("Enemy"))
+            {
+                obj.gameObject.GetComponent<EnemySlime>().TriggerDeath();
+            }
         }
 
         Destroy(gameObject);
