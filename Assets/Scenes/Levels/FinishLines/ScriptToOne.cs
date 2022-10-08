@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ScriptToOne : MonoBehaviour
 {
-    public string toLoad ="Level 1";
+    public int level;
+    public string toLoad;
     
     public GameObject collidedWith;
         void OnTriggerEnter2D(Collider2D other) 
         {  
             
-            if(collidedWith.tag == other.tag){
-                completion.completionarr[0] = true;
+            if(other.CompareTag("Player")){
+                completion.completionarr[level] = true;
                 SceneManager.LoadScene(toLoad);
             } 
 

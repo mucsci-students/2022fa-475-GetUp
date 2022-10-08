@@ -8,8 +8,8 @@ public GameObject collidedWith;
 
         void OnTriggerEnter2D(Collider2D other) 
         {  
-            if(collidedWith.tag == other.tag){
-                Debug.Log("poke");
+            
+            if(other.CompareTag("Player")){
                 PauseControl.RestartLevel();
             }
         }
