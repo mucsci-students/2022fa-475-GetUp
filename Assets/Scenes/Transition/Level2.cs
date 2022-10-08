@@ -9,6 +9,7 @@ public class Level2 : MonoBehaviour
 
     public void OnMouseDown ()
     {
+        if(completion.completionarr[1])
         SceneManager.LoadScene(second);
     }
 }

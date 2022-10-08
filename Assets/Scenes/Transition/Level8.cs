@@ -10,6 +10,7 @@ public class Level8 : MonoBehaviour
     // Update is called once per frame
     public void OnMouseDown ()
     {
+        if(completion.completionarr[7])
         SceneManager.LoadScene(eigth);
     }
 }

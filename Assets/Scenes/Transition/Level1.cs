@@ -10,7 +10,7 @@ public class Level1 : MonoBehaviour
     // Update is called once per frame
     public void OnMouseDown ()
     {
-        SceneManager.LoadScene(first);
-        Debug.Log("work pls");
+        if(completion.completionarr[0])
+            SceneManager.LoadScene(first);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 { 
-    public static bool[] completionarr = {false,false,false,false,false,false,false,false,false,false};
+    
 
     private int currentPower = 0;
     private float moveSpeedDefault;
@@ -26,7 +26,8 @@ public class PlayerController : MonoBehaviour
         anim = transform.Find("PlayerMonster").GetComponent<Animator>();
         rigidB = GetComponent<Rigidbody2D>();
         moveSpeedDefault = moveSpeed;
-        DontDestroyOnLoad(this);
+        Debug.Log(completion.completionarr[0]);
+
     }
 
     // Update is called once per frame

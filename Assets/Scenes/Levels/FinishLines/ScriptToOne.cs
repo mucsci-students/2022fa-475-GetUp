@@ -12,7 +12,7 @@ public class ScriptToOne : MonoBehaviour
         {  
             
             if(collidedWith.tag == other.tag){
-                PlayerController.completionarr[0] = true;
+                completion.completionarr[0] = true;
                 SceneManager.LoadScene(toLoad);
             } 
 
