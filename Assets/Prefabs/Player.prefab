@@ -153,6 +153,7 @@ MonoBehaviour:
   - {fileID: 1371486375850154260, guid: cfcd65c2b7a26d34bb268d0b4bbe9671, type: 3}
   moveSpeed: 5
   jumpSpeed: 200
+  JumpCoolDown: 0.65
 --- !u!114 &7174411304049407355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +261,7 @@ Animator:
   m_GameObject: {fileID: 8984610470241374397}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 430f0d14fd7663c4d99699228497dd21, type: 2}
+  m_Controller: {fileID: 9100000, guid: cb1facd0c9c9d8141b682c4a1771dd9e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0

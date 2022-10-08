@@ -98,12 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldOfImpact: 3
-  force: 200
-  countdownText: {fileID: 6602235682286922078, guid: 3e4dcde7b08d67149bbd360df72bd731, type: 3}
+  force: 500
   layer:
     serializedVersion: 2
     m_Bits: 64
-  explosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
 --- !u!50 &-1765453857761679259
 Rigidbody2D:
   serializedVersion: 4

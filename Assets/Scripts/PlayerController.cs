@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
     public static int bombQuantity = 0;
     public static int appleQuantity = 0;
     public static int freezeQuantity = 0;
-    
+
+
     private bool control = true;
     private int currentPower = 0;
     private float moveSpeedDefault;
@@ -121,6 +122,7 @@ public class PlayerController : MonoBehaviour
         else if((powerups[currentPower].CompareTag("Apple") && appleQuantity != 0))
         {
             anim.SetTrigger("attack");
+
             Instantiate(powerups[currentPower], new Vector2(transform.position.x + (-0.1f * direction) + (Input.GetAxis("Horizontal") / 2), transform.position.y), Quaternion.identity);
             --appleQuantity;
         }

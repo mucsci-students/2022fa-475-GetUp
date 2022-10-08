@@ -122,7 +122,6 @@ MonoBehaviour:
   resistGravityLength: 1
   activeLength: 1
   lifeSpan: 3
-  dustStorm: {fileID: 100000, guid: 1f7aa4d40edff6e48b549003cad031e1, type: 3}
 --- !u!58 &-5347164322985829381
 CircleCollider2D:
   m_ObjectHideFlags: 0
