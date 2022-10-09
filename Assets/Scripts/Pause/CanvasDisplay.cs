@@ -8,9 +8,9 @@ public class CanvasDisplay : MonoBehaviour
     public Canvas PauseCanvas;
     public GameObject background;
 
-    void Start(){
-    PauseCanvas = GetComponent<Canvas>();
-    Debug.Log(PauseCanvas.enabled);
+    void Start() {
+        PauseCanvas = GetComponent<Canvas>();
+        Debug.Log(PauseCanvas.enabled);
     }
 
     // Update is called once per frame

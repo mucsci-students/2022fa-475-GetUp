@@ -8,7 +8,7 @@ public class IcePotion : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Instantiate(iceFloor, new Vector2(transform.position.x, transform.position.y - 0.5f), Quaternion.identity);
+        Instantiate(iceFloor, new Vector2(transform.position.x, transform.position.y - 0.6f), Quaternion.identity);
         Destroy(gameObject);
     }
 }

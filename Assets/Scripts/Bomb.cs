@@ -49,6 +49,7 @@ public class Bomb : MonoBehaviour
                 obj.gameObject.GetComponent<EnemySlime>().TriggerDeath();
             }
         }
+
         Destroy(gameObject);
     }
 }
