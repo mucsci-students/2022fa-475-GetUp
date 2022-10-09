@@ -2164,6 +2164,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2996678626829177972, guid: 01977d49a3a0b7f49820c4c8867b3ca6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486237892210540966, guid: 01977d49a3a0b7f49820c4c8867b3ca6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7454224279847014651, guid: 01977d49a3a0b7f49820c4c8867b3ca6, type: 3}
       propertyPath: m_fontColor.b
       value: 0.018795967
@@ -2264,7 +2272,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2996678626829177972, guid: 01977d49a3a0b7f49820c4c8867b3ca6, type: 3}
+    - {fileID: 6486237892210540966, guid: 01977d49a3a0b7f49820c4c8867b3ca6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 01977d49a3a0b7f49820c4c8867b3ca6, type: 3}
 --- !u!1001 &8449954540945462302
 PrefabInstance:
