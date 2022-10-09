@@ -45,6 +45,11 @@ public class Bomb : MonoBehaviour
             }
         }
 
+            if (obj.gameObject.CompareTag("Enemy"))
+            {
+                obj.gameObject.GetComponent<EnemySlime>().TriggerDeath();
+            }
+        }
         Destroy(gameObject);
     }
 }
