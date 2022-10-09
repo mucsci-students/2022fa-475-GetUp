@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     public static int appleQuantity = 0;
     public static int freezeQuantity = 0;
 
-
     private bool control = true;
     private int currentPower = 0;
     private float moveSpeedDefault;
@@ -16,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private CircleCollider2D circCol;
     private Animator anim;
+    private AudioSource[] sfx;
     [SerializeField]
     private LayerMask groundLayerMasks;
 
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         anim = transform.Find("PlayerMonster").GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         circCol = GetComponent<CircleCollider2D>();
+        sfx = GetComponents<AudioSource>();
         moveSpeedDefault = moveSpeed;
         
         bombQuantity = 0;
@@ -66,6 +67,7 @@ public class PlayerController : MonoBehaviour
         }
         if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && IsGrounded())
         {
+            sfx[0].Play();
             rb.AddForce(new Vector2(0, jumpSpeed));
         }
     }
@@ -139,6 +141,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(transform.up * Random.Range(300f, 600f));
             rb.AddForce(-transform.right * Random.Range(30f, 60f));
             circCol.enabled = false;
+            sfx[1].Play();
         }
     }
 

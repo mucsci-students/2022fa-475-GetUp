@@ -7,6 +7,7 @@ public class EnemySlime : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     private BoxCollider2D boxCol;
+    private AudioSource deathSfx;
     private float moveSpeedDefault;
 
     public float moveSpeed = 1.0f;
@@ -17,6 +18,7 @@ public class EnemySlime : MonoBehaviour
         anim = transform.Find("EnemySlimeMonster").GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         boxCol = GetComponent<BoxCollider2D>();
+        deathSfx = GetComponent<AudioSource>();
         anim.SetBool("isMoving", true);
         moveSpeedDefault = moveSpeed;
     }
@@ -39,7 +41,7 @@ public class EnemySlime : MonoBehaviour
             TriggerDeath();
         }
         //Spikes under Killzone tag
-        if (collision.gameObject.CompareTag("Killzone"))
+        else if (collision.gameObject.CompareTag("Killzone"))
         {
             TriggerDeath();
         }
@@ -53,8 +55,16 @@ public class EnemySlime : MonoBehaviour
 
     public void TriggerDeath()
     {
+        deathSfx.Play();
         rb.AddForce(transform.up * Random.Range(300f, 600f));
         rb.AddForce(transform.right * Random.Range(30f, 60f));
         boxCol.enabled = false;
+        StartCoroutine(DeleteFromExistence());
+    }
+
+    IEnumerator DeleteFromExistence()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
     }
 }
