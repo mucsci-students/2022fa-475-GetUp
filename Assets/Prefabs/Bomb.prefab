@@ -97,13 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d57f7654ae9a05c449c81b69197fb149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldOfImpact: 1
-  force: 300
-  countdownText: {fileID: 6602235682286922078, guid: 3e4dcde7b08d67149bbd360df72bd731, type: 3}
+  fieldOfImpact: 3
+  force: 700
   layer:
     serializedVersion: 2
-    m_Bits: 896
-  explosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
+    m_Bits: 64
 --- !u!50 &-1765453857761679259
 Rigidbody2D:
   serializedVersion: 4

@@ -17,7 +17,7 @@ public GameObject collidedWith;
             if(collidedWith.tag == other.tag){
                 PlayerController.appleQuantity += amount;
                 appleIcon.color = new Color (0,0,0,0);
-                Destroy(gameObject);
+                Destroy(this);
                 
             }
             //  Debug.Log(PlayerController.appleQuantity);
