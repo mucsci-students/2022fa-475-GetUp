@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject[] powerups;
     public float moveSpeed = 5;
-    public float jumpSpeed = 200f;
+    public float jumpSpeed = 300f;
 
     // Start is called before the first frame update
     void Start() {
