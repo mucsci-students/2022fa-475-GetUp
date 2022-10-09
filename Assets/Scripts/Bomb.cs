@@ -43,11 +43,6 @@ public class Bomb : MonoBehaviour
             {
                 obj.gameObject.GetComponent<EnemySlime>().TriggerDeath();
             }
-
-            if (obj.gameObject.CompareTag("Enemy"))
-            {
-                obj.gameObject.GetComponent<EnemySlime>().TriggerDeath();
-            }
         }
 
         Destroy(gameObject);
