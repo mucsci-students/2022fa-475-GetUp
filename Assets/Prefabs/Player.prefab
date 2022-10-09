@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9011467503431534739}
   - component: {fileID: 6106455394405979608}
   - component: {fileID: 7535358975367734081}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: PlayerMonster
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7922149893064268988}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7036547026498249507}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 7174411304049407353}
   - component: {fileID: 7174411304049407352}
   - component: {fileID: 7174411304049407355}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
