@@ -17,9 +17,7 @@ public GameObject collidedWith;
             if(collidedWith.tag == other.tag){
                 PlayerController.freezeQuantity += amount;
                 freezeIcon.color = new Color (0,0,0,0);
-                Destroy(this);
-                
+                Destroy(gameObject);
             }
-
         }
 }
