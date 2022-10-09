@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1343434626832558440}
   - component: {fileID: 6379877186847203835}
   - component: {fileID: 6772305426041596010}
-  m_Layer: 3
+  - component: {fileID: -8142510817172941842}
+  m_Layer: 8
   m_Name: IceFloor
   m_TagString: Ice Floor
   m_Icon: {fileID: 0}
@@ -69,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1533999725
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300022, guid: 99e0832f2e8efae4ba10b757f5e03873, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -109,3 +110,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.96, y: 0.09551114}
   m_EdgeRadius: 0
+--- !u!114 &-8142510817172941842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6483992357000556067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3903e6f2f8d627459e8393195100d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meltTime: 20
