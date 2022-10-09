@@ -8,7 +8,6 @@ public class PauseControl : MonoBehaviour
 {
 public static bool paused = false;
 
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)){
@@ -31,7 +30,7 @@ public static bool paused = false;
         }
     }
 
-    void RestartLevel(){
+    public static void RestartLevel(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

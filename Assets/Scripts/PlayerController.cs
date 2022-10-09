@@ -29,7 +29,10 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         circCol = GetComponent<CircleCollider2D>();
         moveSpeedDefault = moveSpeed;
-        Debug.Log(completion.completionarr[0]);
+        
+        bombQuantity = 0;
+        appleQuantity = 0;
+        freezeQuantity = 0;
     }
 
     // Update is called once per frame
