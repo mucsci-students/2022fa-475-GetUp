@@ -11,6 +11,7 @@ git clone https://github.com/mucsci-students/2022fa-475-GetUp
 1. Navigate the WindowsBuild folder inside the game's main directory 
 ```
 cd 2022fa-475-GetUp/2022fa-475-GetUp
+git switch main2
 ```
 2. Run the executable named GetUp!.exe
 ```
