@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1783731295
-  m_SortingLayer: 0
+  m_SortingLayerID: -1533999725
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 3538125613680756451, guid: 0c1e734fa85636743af3bc22c6d99ba8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 808687402528365375}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 67b400ac49a46d24a9fcf54889a6faed, type: 2}
+  m_Controller: {fileID: 9100000, guid: ec6dac2c725ee1541a593464b5579267, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -197,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 7174411304049407357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: -0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 9011467503431534739}
   m_Father: {fileID: 0}
@@ -215,7 +215,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 0.25
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 8
@@ -260,7 +260,7 @@ MonoBehaviour:
   - {fileID: 9124557523800611534, guid: 03caad3233c059c4386a57fc05a6a567, type: 3}
   - {fileID: 1371486375850154260, guid: cfcd65c2b7a26d34bb268d0b4bbe9671, type: 3}
   moveSpeed: 5
-  jumpSpeed: 200
+  jumpSpeed: 300
 --- !u!114 &7174411304049407355
 MonoBehaviour:
   m_ObjectHideFlags: 0
