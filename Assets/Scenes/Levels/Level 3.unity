@@ -251,7 +251,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 917710461759911985, guid: 1339f9dd9b9fc0042bcba8b3ca1672a7, type: 3}
       propertyPath: amount
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 917710461759911985, guid: 1339f9dd9b9fc0042bcba8b3ca1672a7, type: 3}
       propertyPath: collidedWith
@@ -868,6 +868,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7174411304049407334, guid: 85a1bc95e50613c498973b6e562b4349, type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7174411304049407352, guid: 85a1bc95e50613c498973b6e562b4349, type: 3}
+      propertyPath: jumpSpeed
+      value: 140
+      objectReference: {fileID: 0}
     - target: {fileID: 7174411304049407354, guid: 85a1bc95e50613c498973b6e562b4349, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2854,7 +2862,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7483497508014939870, guid: 37d3002f59930664ebdfce0b97a1f78d, type: 3}
       propertyPath: amount
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7483497508014939870, guid: 37d3002f59930664ebdfce0b97a1f78d, type: 3}
       propertyPath: collidedWith

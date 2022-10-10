@@ -142,6 +142,18 @@ PrefabInstance:
       propertyPath: collidedWith
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1539969825, guid: 1ed07a1cc9129964cb9428412e58e4f7, type: 3}
+      propertyPath: level
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539969825, guid: 1ed07a1cc9129964cb9428412e58e4f7, type: 3}
+      propertyPath: toLoad
+      value: Level 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539969825, guid: 1ed07a1cc9129964cb9428412e58e4f7, type: 3}
+      propertyPath: collidedWith
+      value: 
+      objectReference: {fileID: 1699545078}
     - target: {fileID: 1718007441904426229, guid: 1ed07a1cc9129964cb9428412e58e4f7, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -11537,7 +11549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d994f1c277b3e704386e47e77a3db998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1699545079}
   offset: {x: 6, y: 1, z: -10}
 --- !u!1 &1351339550
 GameObject:
@@ -11826,6 +11838,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685771223}
   m_CullTransparentMesh: 1
+--- !u!1 &1699545078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7174411304049407357, guid: 85a1bc95e50613c498973b6e562b4349, type: 3}
+  m_PrefabInstance: {fileID: 1978307099}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1699545079 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7174411304049407354, guid: 85a1bc95e50613c498973b6e562b4349, type: 3}
+  m_PrefabInstance: {fileID: 1978307099}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1768946123
 GameObject:
   m_ObjectHideFlags: 0

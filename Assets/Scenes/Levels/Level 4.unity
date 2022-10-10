@@ -8163,7 +8163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7454224280611888965, guid: 01977d49a3a0b7f49820c4c8867b3ca6, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7454224280611888965, guid: 01977d49a3a0b7f49820c4c8867b3ca6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9715,7 +9715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5853030236074637744, guid: 72ca94ed5028f9a4080cdf44d7e8fae8, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5853030236074637744, guid: 72ca94ed5028f9a4080cdf44d7e8fae8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -13612,6 +13612,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7174411304049407334, guid: 85a1bc95e50613c498973b6e562b4349, type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7174411304049407352, guid: 85a1bc95e50613c498973b6e562b4349, type: 3}
+      propertyPath: jumpSpeed
+      value: 140
+      objectReference: {fileID: 0}
     - target: {fileID: 7174411304049407354, guid: 85a1bc95e50613c498973b6e562b4349, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -20461,6 +20469,10 @@ PrefabInstance:
     - target: {fileID: 917710461759911990, guid: 1339f9dd9b9fc0042bcba8b3ca1672a7, type: 3}
       propertyPath: m_Name
       value: freeze
+      objectReference: {fileID: 0}
+    - target: {fileID: 917710461759911990, guid: 1339f9dd9b9fc0042bcba8b3ca1672a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1339f9dd9b9fc0042bcba8b3ca1672a7, type: 3}
